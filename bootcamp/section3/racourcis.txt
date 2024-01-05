@@ -1,0 +1,5 @@
+Ctrl ù => Ouvre ferme le Terminal
+Ctrl Shift P => recherche fonctionalité VS code
+Ctrl : => commente une ligne
+Shift Alt fleche du bas => duplique une ligne
+Shift Select => ecrire sur multi ligne

@@ -1,0 +1,245 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*  */
+html {
+  box-sizing: border-box; /* Cela signifie que lorsque nous définissons la largeur sur un élément comme 100 pixels, cela va prendre en compte la largeur de
+  la bordure. */
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* mais je vais changer la taille de ceci et le centrer verticalement */
+body {
+  background-color: #60a9ff;
+  display: flex; /* Utilise flexbox */
+  justify-content: center; /* notre contenu est maintenant centré horizontalement */
+  align-items: center;
+  min-height: 100vh; /* le body a maintenant une taille minimum pour que la carde apparaisse entierment */
+}
+
+/* Definit la grande card */
+/*  */
+.panel {
+  background-color: white;
+  border-radius: 10px; /* Arrondit les bords de la card */
+  padding: 15px 25px; /* Crée de l'espace entre la card et son contenu */
+  width: 100%; /* lui dit que la card fait 100% de son parent ici le body */
+  max-width: 960px; /* Dit a la card qu'elle ne sera jamais plus grand que ça */
+  display: flex; /* Nous allons maintenant faire de ce panneau lui-même un conteneur flexbox afin de pouvoir disposer le contenu
+  à l'intérieur */
+  flex-direction: column; /* On est mobile first On commence a faire le template pour mobile et on l'adaptera avec @medio pour grand ecran => pour les mobile on choisit column first => ça met les div les une en dessous des autres */
+  text-align: center; /* ça centre le texte dand le panel grande card */
+  text-transform: uppercase; /* Met tout les textes dans ce panel en majuscule */
+}
+
+.pricing-plan {
+  border-bottom: 1px solid #e1f1ff; /* Permet de faire une ligne fine grise qui sépare les plans  */
+}
+.pricing-plan:last-child {
+  border-bottom: none; /* On ne veut pas de ligne de démarquation sur le dernier plan */
+}
+
+.pricing-img {
+  margin-bottom: 25px; /* Met de la marge sous les images de chaque plan */
+  max-width: 100%; /* Fait prendre a l'image tout l'espace disponible en mobile */
+}
+/*  */
+.pricing-header {
+  /* sur le titre de chaque plan */
+  color: #888;
+  font-weight: 600; /* bold le texte */
+  letter-spacing: 1px; /* Espacement entre les lettred */
+}
+
+.pricing-features {
+  margin: 50px 0 25px; /* fait un espacement entre le top et bottom et 0 espace sur les cotés */
+  color: #016ff9;
+}
+
+.pricing-features-item {
+  font-weight: 600; /* bold le texte */
+  letter-spacing: 1px; /* Espacement entre les lignes */
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 15px 0; /* fait un espacement entre le top et bottom et 0 espace sur les cotés */
+  border-top: 1px solid #e1f1ff; /* Permet de faire une ligne fine grise qui sépare les lignes de texte */
+}
+
+.pricing-features-item:last-child {
+  border-bottom: 1px solid #e1f1ff; /* Pour qu'il y est une ligne fine grise sous le dernier élément */
+}
+
+.pricing-price {
+  /* le texte du prix */
+  color: #016ff9;
+  display: block; /* Pour que ce texte est un block qui prend toute la ligne */
+  font-size: 32px;
+  font-weight: 700; /* bold le texte encore plus*/
+}
+
+.pricing-button {
+  border: 1px solid #9dd1ff;
+  border-radius: 10px;
+  color: #348efe;
+  display: inline-block;
+  padding: 15px 35px;
+  text-decoration: none;
+  margin: 25px 0;
+  transition: background-color 200ms ease-in-out;
+}
+
+.pricing-button:hover,
+.pricing-button:focus {
+  background-color: #e1f1ff;
+}
+
+.pricing-button.is-featured {
+  background-color: #48aaff;
+  color: white;
+}
+
+.pricing-button.is-featured:hover,
+.pricing-button.is-featured:focus {
+  background-color: #269aff;
+  color: white;
+}
+
+@media (min-width: 900px) {
+  .panel {
+    flex-direction: row;
+  }
+  .pricing-plan {
+    border-bottom: none;
+    border-right: 1px solid #e1f1ff;
+    padding: 25px 50px;
+  }
+  .pricing-plan:last-child {
+    border-right: none;
+  }
+}

@@ -1,0 +1,695 @@
+/* _______________________________Section 6: CSS : The very Basics_________________________________________ */
+/* Leçon 64__________________Color system hexadeciLeçmal  */
+h3 {
+  color: rgb(195, 27, 9);
+  font-size: 30px;
+}
+
+/* Leçon 66__________________Text Property */
+#title66 {
+  text-align: center;
+  font-weight: lighter;
+  text-decoration: rgb(166, 255, 0) wavy underline overline;
+  font-size: 50px;
+  color: rgb(100, 33, 183);
+}
+
+.leçon66 {
+  width: 70%;
+  background-color: rgb(182, 172, 237);
+  color: aliceblue;
+  text-align: center;
+  line-height: 2;
+  font-weight: 1000;
+  letter-spacing: 0.2rem;
+  font-size: 1.2em;
+  font-family: Lucida Grande, Consolas, sans-serif;
+}
+
+p > a {
+  text-decoration: none;
+}
+
+/* _______________________________Section 7 : The world of CSS Selectors_________________________________________ */
+/* Leçon 70__________________Universal Selector & Element Selector */
+/* Universal Selector => Select tout sur la page */
+* {
+  /* color: pink; */
+}
+
+/* Element Selector => Select tous le boutons */
+button {
+  font-size: 30px;
+}
+
+/* Selector List => Select 2 type d'élément en meme temps */
+h1,
+h2 {
+  color: #003049;
+}
+
+body {
+  background-color: #e7f9e9;
+}
+
+button {
+  font-size: 30px;
+  background-color: #669bbc;
+  border-radius: 5px;
+}
+
+/* Leçon 71__________________ID Selector */
+/* id Selector  => pour faire une variation sur un seul element */
+#signup {
+  background-color: #003049;
+  color: #fdf0d5;
+}
+
+span {
+  color: #669bbc;
+}
+
+/* Leçon 72__________________Class Selector */
+/* Classe Selector => pour faire une variation sur un ensemble d'élément */
+.tag {
+  background-color: #c1121f;
+  font-size: 20px;
+  color: #fdf0d5;
+}
+
+/* Leçon 73__________________The Descendant Selector */
+/* Descendant Selector  => Ex Select tous les a à l'interieur d'un element qui porte la class post */
+.post a {
+  color: #669bbc;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+/* => EX select tout les a à l'interieur de l'element footer */
+footer a {
+  color: #c1121f;
+  /* text-decoration: none; */
+}
+
+/* Leçon 74__________________The Adjacent & Direct-Descendant Selectors Selector */
+/* Adjacent Selector => Ex select les button qui sont directement apres des input pas nested */
+input + button {
+  background-color: pink;
+}
+
+/* Direct Child Selector => Ex a est a l'interieur de footer mais n'est pas nested plus profondement dans d'autres elements */
+footer > a {
+  color: #003049;
+}
+
+/* Leçon 75__________________The Attribute Selector */
+/* Attribut Selector => Ex selectionne tous les input ou le type attribut est égale à password */
+input[type='password'] {
+  color: #c1121f;
+}
+
+/* Ex on select toutes les section qui porte la class post => ou select.post */
+section[class='post'] {
+  /* background-color: #d5bdaf; */
+}
+
+/* Ex Tous les lien dont le href contiend le mot google */
+a[href*='google'] {
+  color: #780000;
+}
+
+/* Leçon 76__________________Pseudo Classes Selector */
+/* :hover => quand la souris survole l'élement */
+.post button:hover {
+  background-color: #c1121f;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* :active => quand garde le doigt appuyé pendant click */
+.post button:active {
+  background-color: rgb(17, 196, 163);
+}
+
+/* [type='checkbox'] => Select le input type checkbox | :checked => Select ceux qui sont checked */
+input[type='checkbox']:checked {
+  box-shadow: 0 0 0 3px orange;
+  color: #c1121f;
+}
+
+/* :nth-of-type => Select tous 2em elément ici des class .post */
+.post:nth-of-type(2n) {
+  background-color: #e3d5ca;
+}
+
+/* Leçon 77__________________Pseudo Elements Selector */
+
+/* ::selection => quand on highliht un p   */
+p::selection {
+  background-color: darkorange;
+  color: aliceblue;
+}
+
+/* ::first-letter => Select pour Modifier la 1er lettre  */
+h2::first-letter {
+  font-size: 40px;
+}
+
+/* ::first-line => Select pour Modifier la 1er ligne de p */
+p::first-line {
+  color: rgb(179, 109, 17);
+}
+
+/* Leçon 78__________________CSS cascading */
+/* Le dernier gagne si égalité en priorité */
+
+/* Leçon 79 |81__________________Spécificity */
+/* L'ordre des priorité CSS => !important | inline style | id | class | élément | spécificité | inheritance | ordre d'arrivé si égalité |  */
+button:active {
+  background-color: #c11284 !important;
+}
+
+/* Leçon 82__________________CSS Inheritance */
+/* inherit => Force heritage button herite de sa color de son plus haut parent ici body */
+button {
+  /* background-color: inherit; */
+}
+
+/* _______________________________Section 8: The CSS Box Model_________________________________________ */
+/* Leçon 84__________________Box Model: Width & Height */
+section.box div {
+  width: 200px;
+  height: 200px;
+  /* background-color: #669bbc; */
+}
+
+/* Leçon 85__________________Box Model: Border & Border-Radius */
+/* il faut utiliser les 3 border-width, border-width, border-style pour mettre une bordure ou utilise ou utilise border avec 3 attributs */
+/* border-radius pour faire un arrondit de la boxe */
+#one {
+  background-color: #ffafcc;
+  border-width: 5px;
+  border-color: #cdb4db;
+  border-style: solid;
+  /* box-sizing: border-box; */
+  border-radius: 10% 30% 50% 70%;
+  padding: 2%;
+}
+
+#two {
+  background-color: #bde0fe;
+  border-width: 5px;
+  border-color: #cdb4db;
+  border-style: solid;
+  border-left-style: dashed;
+  border-left-width: 10px;
+  border-radius: 25% 10%;
+  padding: 2%;
+}
+
+#three {
+  background-color: #a2d2ff;
+  border: 4px solid #ffc8dd;
+  border-left-style: dotted;
+  border-radius: 50%;
+  padding: 4%;
+}
+
+/* Leçon 85__________________Box Model: Padding */
+section.box h1 {
+  background-color: #cdb4db;
+  width: 120px;
+  height: 60px;
+  padding-left: 80px;
+  padding-right: 0px;
+  padding-top: 10px;
+}
+
+/* Leçon 86|87__________________Box Model: Padding Margging */
+section.box button {
+  padding: 5px 50px 5px 50px;
+  margin: 20px 0px 30px 700px;
+}
+
+/* Leçon 88__________________Box Model: The Display Property */
+/* display: inline-block transforme un élément html block en element inline mais en gardant la possibilité de margin, width, height, padding*/
+#one,
+#two,
+#three {
+  display: inline-block;
+  margin: 10px 10px 10px 1px;
+}
+
+/* display: block transforme un element html inline en block */
+section.box button {
+  display: block;
+}
+
+/* display: block transforme span en element block mais margin padding marche que horizontalement et width height marche pas */
+section.box #three span {
+  background-color: #ffafcc;
+  display: block;
+  margin: 10px 10px 0px 1px;
+  padding: 5px 10px 0px 10px;
+  border-radius: 5px;
+  width: 120px;
+  height: 60px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+}
+
+/* Leçon 89__________________Box Model: CSS Units Revisited */
+section.unitsPercentage {
+  width: 500px;
+  height: 500px;
+  background-color: #fb6f92;
+  border-radius: 5px;
+}
+
+/* width: 50% c'est la moitier de la taille du parent ici section */
+section.unitsPercentage div {
+  width: 50%;
+  height: 50%;
+  background-color: #b5179e;
+  border-radius: 5px;
+}
+
+/* line-height: 200% fct de la taille de font-size */
+h4 {
+  font-size: 40px;
+  border: 1px solid #003049;
+  line-height: 200%;
+}
+
+/* Leçon 90__________________Box Model: CSS Units: ems */
+
+article.classEm {
+  font-size: 30px;
+}
+
+/* em sur font-size est un % de font-size du parent ici article */
+article.classEm h5 {
+  font-size: 1.3em;
+}
+
+/* Ex font-size: 1em p prend la taille de la font-size de son parent ici article 30px */
+article.classEm p {
+  font-size: 1em;
+}
+
+/* em sur un autre attribut que font size Ex border-radius: 0.2em se fit a la font-size de l'element lui meme pour en tirer un pourcentage => cela permet de garder les meme proportion meme si la taille de la fenetre change */
+article.classEm button {
+  font-size: 30px;
+  padding: 0.1em;
+  border-radius: 0.2em;
+  background-color: #0e7c7b;
+  color: white;
+}
+
+/* Avec des ul imbriqué c'est un pb d'utiliser em car a chaque imbrication la font-size augmente de façon exponentielle  */
+article.classEm ul {
+  font-size: 1.5em;
+}
+
+/* Leçon 91__________________Box Model: CSS Units: rems */
+
+/* article.classRem {
+  font-size: 30px;
+} */
+
+/* rem ce base sur la font-size du root element qui est l'element html */
+/* html {
+  font-size: 30px;
+} */
+
+article.classRem h5 {
+  font-size: 2.5rem;
+}
+
+article.classRem p {
+  font-size: 2rem;
+}
+
+/* Pour les button il peut etre preferable d'utiliser em plutot que rem */
+article.classRem button {
+  font-size: 30px;
+  padding: 0 1em;
+  border-radius: 0.2rem;
+  background-color: #0e7c7b;
+  color: white;
+}
+
+/* rem evite d'avoir une font-size exponentielle car relatif a 1 element unique le root */
+article.classRem ul {
+  font-size: 1.5rem;
+}
+
+/* _______________________________Section 9 : Other Assorted Useful CSS Properties _________________________________________ */
+
+/* Leçon 93__________________Other CSS Properties : Opacity & The Alpha Channel */
+section.classOpacity {
+  width: 200px;
+  height: 200px;
+  background-color: #c11284;
+}
+
+/* rgba alpha modify l'opacité de la background-color mais pas du texte à l'interieur */
+#rgbaID {
+  width: 50%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+section.classOpacity {
+  width: 200px;
+  height: 200px;
+  background-color: #c11284;
+}
+
+/* À la difference de opacity qui modifie l'opacité de tous les éléments contenu dans l'Id */
+#opacityID {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  opacity: 0.5;
+}
+
+/* Leçon 94__________________Other CSS Properties : The Position Property */
+
+/*position: static _______________________________________________ */
+#static div {
+  width: 100px;
+  height: 100px;
+  background-color: darkgray;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+/* position: static est le positionnement par default va garder l'élément dans le flux normal du document il ne tiens pas compte de top */
+#static #middle {
+  background-color: #0e7c7b !important;
+  position: static;
+  top: 100px;
+}
+
+/* position: relative_______________________________________________ */
+#relative div {
+  width: 100px;
+  height: 100px;
+  background-color: darkgray;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+/* position: relative Donc relative va garder l'élément dans le flux normal du document, mais nous pouvons le décaler par rapport à lui-même en utilisant le top à left, la right et le bottom.
+L'élément est positionné par rapport (relative) à l'endroit où il se trouverait normalement. */
+#relative #middle {
+  background-color: #0e7c7b !important;
+  position: relative;
+  top: -80px;
+  left: 60px;
+}
+
+/* position: absolute _______________________________________________ */
+#absolute div {
+  width: 100px;
+  height: 100px;
+  background-color: darkgray;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+/* maintenant la div va ce positionner par rapport à la section avec l'id #absolute si on le met pas son parent section a relative la div va se position par rapport au body en a gauche de la page */
+#absolute {
+  position: relative;
+}
+
+/* position: absolute block sa position est relatif a son parent ici section et ne va pas garder l'élément dans le flux normal du document */
+#absolute #middle {
+  background-color: #0e7c7b !important;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+/* position: fixed _______________________________________________ */
+#fixed div {
+  width: 100px;
+  height: 100px;
+  background-color: darkgray;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+/* position: fixed la div va se position par rapport au body en a gauche de la page et ne va pas garder l'élément dans le flux normal du document et quand scrool suit*/
+#fixed #middle {
+  background-color: #0e7c7b !important;
+  position: fixed;
+  top: 100px;
+  left: 100px;
+}
+
+/* position: sticky _______________________________________________ */
+#sticky div {
+  width: 100px;
+  height: 100px;
+  background-color: darkgray;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+/* position: sticky la div garde sa position dans le flux par default mais quand scrool suit*/
+#sticky #middle {
+  background-color: #0e7c7b !important;
+  position: sticky;
+  left: 20px;
+}
+
+/* Leçon 95__________________Other CSS Properties : CSS Transitions */
+
+.circle {
+  width: 300px;
+  height: 300px;
+  background-color: #caffbf;
+  transition: background-color 1s ease-in, border-radius 2s;
+}
+
+.circle:hover {
+  background-color: #fde4cf;
+  border-radius: 50%;
+}
+
+.cubeTransition div {
+  height: 100px;
+  width: 100px;
+  background-color: #ff6b35;
+  margin: 20px 0;
+  transition: margin-left 3s, width 10s, background-color 3s;
+}
+
+.cubeTransition:hover div {
+  margin-left: 500px;
+  width: 500px;
+}
+
+div:nth-of-type(1) {
+  transition-timing-function: ease-in;
+  background-color: #b9fbc0;
+}
+div:nth-of-type(2) {
+  transition-timing-function: ease-out;
+  background-color: #98f5e1;
+}
+div:nth-of-type(3) {
+  transition-timing-function: cubic-bezier(0.7, 0, 0.84, 0);
+  background-color: #8eecf5;
+}
+div:nth-of-type(4) {
+  transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
+  background-color: #90dbf4;
+}
+
+/* Leçon 96__________________Other CSS Properties : The Power of CSS Transforms */
+
+section.transfo1 h1 {
+  background-color: #2a9d8f;
+  border: 5px solid #264653;
+  color: #eae2b7;
+  padding: 0.7em;
+  width: 300px;
+  font-size: 1.8em;
+  text-align: center;
+  margin: 20px auto;
+  font-family: Courier New;
+  font-weight: lighter;
+}
+
+section.transfo1 h1:first-of-type {
+  background-color: #4361ee;
+  /* transform-origin: top right; */
+  transform: rotate(45deg);
+}
+
+section.transfo1 h1:nth-of-type(2n) {
+  background-color: #f72585;
+  transform: scale(0.6);
+}
+
+section.transfo1 h1:nth-of-type(3n) {
+  background-color: #7209b7;
+  transform: translateX(200px);
+}
+
+section.transfo1 h1:nth-of-type(4n) {
+  background-color: #3a0ca3;
+  transform: translate(-100px, 50px);
+}
+
+section.transfo2 h1 {
+  background-color: #2a9d8f;
+  border: 5px solid #264653;
+  color: #eae2b7;
+  padding: 0.7em;
+  width: 300px;
+  font-size: 1.8em;
+  text-align: center;
+  margin: 20px auto;
+  font-family: Courier New;
+  font-weight: lighter;
+}
+
+section.transfo2 h1:first-of-type {
+  background-color: #d00000;
+  transform: skew(30deg);
+}
+
+section.transfo2 h1:nth-of-type(2n) {
+  background-color: #ffba08;
+  transform: skew(10deg, 5deg);
+}
+
+section.transfo2 h1:nth-of-type(3n) {
+  background-color: #3f88c5;
+  transform: rotate(-20deg) scale(1.3);
+}
+
+section.transfo2 h1:nth-of-type(4n) {
+  background-color: #032b43;
+  transform: translateX(-500px) rotate(0.5turn) scaleY(1.5);
+}
+
+/* section.transfo2 h1:nth-of-type(5n) {
+  background-color: #136f63;
+   transform: matrix(1, 2, 3, 4, 5, 6);
+   transform: perspective(17px); 
+} */
+
+/* section.transfo2 h1:nth-of-type(6n) {
+  background-color: #0165ff;
+  transform: matrix3d(1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); 
+} */
+
+section.transfo2 {
+  transform: scale(0.6) translateX(500px);
+}
+
+/* Leçon 97__________________Other CSS Properties : Fancy Button Hover Effect CodeAlong */
+
+#hoverMe {
+  height: 300px;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #151b29;
+}
+
+#hoverMe button {
+  font-family: inherit;
+  background: none;
+  color: #ffa260;
+  border: 2px solid;
+  padding: 1em 2em;
+  font-size: 1em;
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+#hoverMe button:hover {
+  border-color: #f1ff5c;
+  color: white;
+  box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+  transform: translateY(-0.25em);
+  cursor: pointer;
+}
+
+/* Leçon 98__________________Other CSS Properties : The Truth About Background */
+
+#Background {
+  width: 80%;
+  height: 800px;
+  background-image: url(https://images.unsplash.com/photo-1702952084675-b5489e589251?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: bottom;
+  /* background: center/40% no-repeat
+      url(https://images.unsplash.com/photo-1702952084675-b5489e589251?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D),
+    blueviolet; */
+  margin: 0 auto;
+}
+
+#Background h1 {
+  /* text-align: center; */
+  /* text-shadow: black -6px 6px; */
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-size: 8em;
+  font-weight: bold;
+  color: white;
+}
+
+/* Leçon 99__________________Other CSS Properties : Google Fonts is Amazing */
+#fontFamily {
+  font-family: Montserrat, sans-serif;
+  width: 60%;
+  margin: 0 auto;
+}
+
+#fontFamily h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 100;
+}
+
+#fontFamily h2 {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+
+#fontFamily h3 {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+
+#fontFamily h1 + h2 {
+  margin-top: 10px;
+}
+
+/*  Leçon 101__________________Other CSS Properties : Photo Blog CodeAlong */
+
+img {
+  width: 30%;
+  margin: calc(10% / 6);
+}
+
+#titrePhoto {
+  font-family: 'Raleway', sans-serif;
+  margin-left: calc(10% / 6);
+  text-transform: uppercase;
+  border-bottom: 2px solid #ccd5ae;
+  color: #ccd5ae;
+  width: 30%;
+  font-size: 1.5em;
+  padding: 1em 0;
+}

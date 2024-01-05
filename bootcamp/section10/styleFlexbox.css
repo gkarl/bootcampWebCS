@@ -1,0 +1,287 @@
+h3 {
+  color: rgb(195, 27, 9);
+  font-size: 30px;
+}
+/* Leçon 106 | 110__________________Flexbox : Flex-Direction | Justify-Content | ... */
+
+h1,
+h2 {
+  text-align: center;
+}
+/*  */
+#container {
+  background-color: #003049;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+  border: 5px solid black;
+  display: flex; /* Utiliser flexbox */
+  flex-direction: row; /* Définir axe principale => row | row-reverse | column | column-reverse */
+  justify-content: space-evenly; /* Arrangement sur axe principale  => flex-start | flex-end | center | space-between | space-around | space-evenly*/
+  flex-wrap: wrap; /* 2em ligne si élémént prennent trop d'espace  => wrap | wrap-reverse | nowrap */
+  align-items: baseline; /* Arrangement sur axe secondaire  flex-start | flex-end | center | baseline */
+  align-content: space-evenly; /* controle l' espace entre row ou column Si on met flex-wrap off  align-content ne fait plus rien => center | flex-end | flex-start | space-between | space-around | space-evenly */
+}
+
+#container div {
+  width: 200px;
+  height: 200px;
+  flex-basis: 40px; /* Change la taille de l'élément le long de l'axe principal width ou height*/
+  text-align: center;
+  font-size: 4em;
+  max-width: 400px; /* Défini un width max pour les éléments */
+}
+
+#container div:nth-of-type(1) {
+  flex-grow: 2; /* fait prendre a cette élément tout l'espace restant */
+}
+
+#container div:nth-of-type(3) {
+  align-self: flex-end; /* Permet de changer la position d'1 élément du container suivant l'axe secondaire center à la différence de align-content qui fait pareil mais pour tout le container, marche que si align-content est off => | flex-end | flex-start | space-between | space-around | space-evenly */
+  flex-grow: 1;
+}
+
+#container div:nth-of-type(5) {
+  flex-basis: 400px; /* flex-shrink: 0; quand retrécis la page tous les autres éléments retrécissent mais pas le dernier, si met 3 retrecit 3 fois plus vite */
+}
+
+/* Leçon 111__________________Flexbox : Flex Shorthand */
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  border: 5px solid black;
+  height: 500px;
+  display: flex;
+}
+main .sidebar {
+  background-color: #e9edc9;
+  /*flex parmet de mettre tous ces attribut à la foi => flex-grow | flex-shrink | flex-basis */
+  flex: 1 2 300px;
+}
+main .maincontent {
+  background-color: #ccd5ae;
+  flex: 2 1 800px;
+}
+
+/* Leçon 113__________________Flexbox : The Power of Media Queries */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul,
+li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* @media (min-width: 600px) and (max-width: 800px){
+    h1 {
+        color: purple;
+    }
+} */
+
+/* @media (max-width: 1500px){
+    h1 {
+        color: yellow;
+    }
+}
+
+@media (max-width: 1000px){
+    h1 {
+        color: orange;
+    }
+}
+@media (max-width: 500px){
+    h1 {
+        color: red;
+    }
+} */
+
+/* C'est plus courant de le faire comme ça on lui donne une color par default */
+h1 {
+  color: red;
+}
+
+/* On lui dit tout ce qui en dessous de 5OOpx devient orange */
+@media (min-width: 500px) {
+  h1 {
+    color: orange;
+  }
+}
+/* On lui dit tout ce qui en dessous de 10OOpx devient yellow */
+@media (min-width: 1000px) {
+  h1 {
+    color: yellow;
+  }
+}
+@media (min-width: 1500px) {
+  h1 {
+    color: green;
+  }
+}
+
+/* On lui dit quand en orientation landscape fait ce CSS*/
+/* @media (orientation: landscape) {
+body {
+   background-color: magenta;
+}
+} */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4em;
+  }
+  nav,
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 576px) {
+  h1 {
+    font-size: 3em;
+  }
+}
+
+/* Leçon 115__________________Pricing Panel Project  */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

@@ -1,0 +1,101 @@
+h3 {
+  color: rgb(195, 27, 9);
+  font-size: 30px;
+}
+/* Exo 7 first css__________________________ */
+
+h1 {
+  color: green;
+}
+
+h2 {
+  color: rgb(255, 0, 255);
+}
+
+p {
+  /* color: white; */
+  /* background-color: black; */
+}
+
+button {
+  color: #b84831;
+  background-color: pink;
+}
+
+/*Exo 8 Text CSS_____________________________  */
+h1 {
+  text-transform: uppercase;
+  font-family: Monospace;
+  text-align: center;
+  font-weight: 100;
+  font-size: 40px;
+  letter-spacing: 20px;
+  text-decoration: plum underline wavy;
+}
+
+/* Exo 9 Selector____________________________________ */
+/* Make all LI's blue */
+li {
+  color: blue;
+}
+
+/* Make everything with the class of 'done' grey*/
+.done {
+  color: grey;
+}
+
+/* Make the element with the id of 'clear' have a red BG and white text */
+#clear {
+  background-color: red;
+  color: white;
+}
+
+/* Exo 10 Descendant Selector____________________________________ */
+
+header a {
+  font-size: 30px;
+  color: teal;
+}
+
+#dislikes a {
+  font-weight: bold;
+  color: red;
+}
+
+/* Exo 11 Checkerboard Pseudo Classes Selector____________________________________ */
+.square {
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+/* DO NOT TOUCH THIS FILE!!!  */
+/* THIS CODE WILL MAKE SENSE ONCE WE COVER FLEXBOX!  */
+#board {
+  display: flex;
+  margin: 0 auto;
+  width: 500px;
+  flex-wrap: wrap;
+}
+/* ________________ */
+.square {
+  background-color: red;
+}
+
+.square:nth-of-type(2n) {
+  background-color: black;
+}
+
+/* Exo 12 Boxe Model Practice____________________________________ */
+div {
+  width: 210px;
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.card img {
+  width: 200px;
+  border: 5px solid rgb(236, 183, 191);
+  border-radius: 50%;
+}
