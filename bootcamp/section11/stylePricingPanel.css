@@ -202,44 +202,49 @@ body {
   font-size: 32px;
   font-weight: 700; /* bold le texte encore plus*/
 }
-
+/*  */
 .pricing-button {
-  border: 1px solid #9dd1ff;
-  border-radius: 10px;
-  color: #348efe;
-  display: inline-block;
+  /* class sur le bouton de chaque plan */
+  border: 1px solid #9dd1ff; /* Ètablit une bordure autour du link a */
+  border-radius: 10px; /* Arrondit les bords de la bordure */
+  color: #348efe; /* Met une color sur le texte du bouton */
+  display: inline-block; /* Definit le link a comme block cad prend toute la ligne */
   padding: 15px 35px;
-  text-decoration: none;
-  margin: 25px 0;
-  transition: background-color 200ms ease-in-out;
+  text-decoration: none; /* Vire la ligne sous le link a */
+  margin: 25px 0; /* Rajoute un espacement top et bottom */
+  transition: background-color 200ms ease-in-out; /* Fait que le changement de color du bouton en survole (css juste en dessous) ce fasse progressivement */
 }
 
 .pricing-button:hover,
 .pricing-button:focus {
-  background-color: #e1f1ff;
+  /* Veut rajouter du CSS qd survole le bouton */
+  background-color: #e1f1ff; /* Fait que le bouton change de color */
 }
 
 .pricing-button.is-featured {
-  background-color: #48aaff;
+  /* Le bouton du plan du milieu a une class en plus .is-featured */
+  background-color: #48aaff; /* ce qui lui permet de lui changer sa color */
   color: white;
 }
 
 .pricing-button.is-featured:hover,
 .pricing-button.is-featured:focus {
-  background-color: #269aff;
+  /* Le bouton du plan du milieu a une class en plus .is-featured */
+  background-color: #269aff; /* un aspect différent en survole également */
   color: white;
 }
-
+/*  */
 @media (min-width: 900px) {
+  /* defini le css a partir de 900px  */
   .panel {
-    flex-direction: row;
+    flex-direction: row; /* On passe d'une disposition column a row pour les paneaux price*/
   }
   .pricing-plan {
-    border-bottom: none;
-    border-right: 1px solid #e1f1ff;
-    padding: 25px 50px;
+    border-bottom: none; /* On n'a plus besoin de cette ligne fine en mode grand panneau en bas */
+    border-right: 1px solid #e1f1ff; /* Rajoute une ligne fine entre les panels price sur la droite */
+    padding: 25px 50px; /* Rajoute de l'espace à l'interieur des panels price */
   }
   .pricing-plan:last-child {
-    border-right: none;
+    border-right: none; /* Retire cette ligne fine pour le dernier panel */
   }
 }
